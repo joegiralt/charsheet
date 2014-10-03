@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  str_mod: 1
+  dex_mod: 1
+  con_mod: 1
+  int_mod: 1
+  wis_mod: 1
+  cha_mod: 1
+  size: MyString
+  speed: MyString
+
+two:
+  name: MyString
+  str_mod: 1
+  dex_mod: 1
+  con_mod: 1
+  int_mod: 1
+  wis_mod: 1
+  cha_mod: 1
+  size: MyString
+  speed: MyString
