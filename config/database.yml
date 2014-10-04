@@ -22,7 +22,7 @@ development:
   #database: ebay_everwise_development2
   database: char_sheet_dev
   pool: 5
-  username: everwise
+  username: joe
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -53,7 +53,7 @@ test:
   #database: everwise_test2
   database: char_sheet_test
   pool: 5
-  username: everwise
+  username: joe
   password:
 
 production:
@@ -63,5 +63,5 @@ production:
   #database: everwise_production2
   database: char_sheet_production
   pool: 5
-  username: everwise
+  username: joe
   password:

@@ -1,6 +1,6 @@
 class Character < ActiveRecord::Base
 
-  belongs_to :race, inverse_of: :character
+  belongs_to :race, inverse_of: :characters
 
   def self.roll_four_keep_three
     roll = []
@@ -33,7 +33,45 @@ class Character < ActiveRecord::Base
   def ability_score_swap(score_1, score_2)
     switch_1 = try(:"#{score_1}")
     switch_2 = try(:"#{score_2}")
-    p switch_1
-    p switch_2
+    update_attribute( score_1, switch_2)
+    update_attribute( score_2, switch_1)
+    save
   end
+
+  def strength
+    if race
+      str + race.str_mod
+    end
+  end
+
+  def dexterity
+    if race
+      dex + race.dex_mod
+    end
+  end
+
+  def constitution
+    if race
+      con + race.con_mod
+    end
+  end
+
+  def intelligence
+    if race
+      int + race.int_mod
+    end
+  end
+
+  def wisdom
+    if race
+      wis + race.wis_mod
+    end
+  end
+
+  def charisma
+    if race
+      cha + race.cha_mod
+    end
+  end
+
 end

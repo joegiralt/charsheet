@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  languageable_id: 
+  languageable_type: Languageable
+  name: MyString
+
+two:
+  languageable_id: 
+  languageable_type: Languageable
+  name: MyString

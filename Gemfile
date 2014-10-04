@@ -25,6 +25,15 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
+# Use Pry for the console in development
+gem 'pry-rails', group: :development
+
+# Use Better Errors to replace standard rails error page with a more useful error page
+gem 'better_errors', group: :development
+
+# Use Binding of Caller to have a CMD Line in the browser window
+gem 'binding_of_caller', group: :development
+gem 'annotate', group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

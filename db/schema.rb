@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141003205439) do
+ActiveRecord::Schema.define(version: 20141004032939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(version: 20141003205439) do
     t.integer  "race_id"
   end
 
+  create_table "languages", force: true do |t|
+    t.integer  "languageable_id"
+    t.string   "languageable_type"
+    t.integer  "tongue_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "languages", ["languageable_id", "languageable_type"], name: "index_languages_on_languageable_id_and_languageable_type", using: :btree
+
   create_table "races", force: true do |t|
     t.string   "name"
     t.integer  "str_mod"
@@ -47,6 +57,28 @@ ActiveRecord::Schema.define(version: 20141003205439) do
     t.integer  "cha_mod"
     t.string   "size"
     t.string   "speed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tongues", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trait_mappings", force: true do |t|
+    t.integer  "traitable_id"
+    t.string   "traitable_type"
+    t.integer  "trait_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "trait_mappings", ["traitable_id", "traitable_type"], name: "index_trait_mappings_on_traitable_id_and_traitable_type", using: :btree
+
+  create_table "traits", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

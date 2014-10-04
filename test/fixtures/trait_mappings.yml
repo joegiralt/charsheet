@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  traitable_id: 
+  traitable_type: Traitable
+  trait_id: MyString
+
+two:
+  traitable_id: 
+  traitable_type: Traitable
+  trait_id: MyString
