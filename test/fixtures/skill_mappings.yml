@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  skillable_id: 
+  skillable_type: Skillable
+  skill_id: MyString
+
+two:
+  skillable_id: 
+  skillable_type: Skillable
+  skill_id: MyString

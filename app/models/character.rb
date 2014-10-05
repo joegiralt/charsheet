@@ -1,6 +1,32 @@
+# == Schema Information
+#
+# Table name: characters
+#
+#  id                  :integer          not null, primary key
+#  name                :string(255)
+#  age                 :string(255)
+#  eyes                :string(255)
+#  skin                :string(255)
+#  height              :string(255)
+#  weight              :integer
+#  size                :string(255)
+#  distiguishing_marks :string(255)
+#  level               :integer
+#  str                 :integer
+#  dex                 :integer
+#  con                 :integer
+#  int                 :integer
+#  wis                 :integer
+#  cha                 :integer
+#  created_at          :datetime
+#  updated_at          :datetime
+#  race_id             :integer
+#
+
 class Character < ActiveRecord::Base
 
   belongs_to :race, inverse_of: :characters
+  has_many :klasses
 
   def self.roll_four_keep_three
     roll = []
@@ -41,36 +67,48 @@ class Character < ActiveRecord::Base
   def strength
     if race
       str + race.str_mod
+    else
+      str
     end
   end
 
   def dexterity
     if race
       dex + race.dex_mod
+    else
+      dex
     end
   end
 
   def constitution
     if race
       con + race.con_mod
+    else
+      con
     end
   end
 
   def intelligence
     if race
       int + race.int_mod
+    else
+      int
     end
   end
 
   def wisdom
     if race
       wis + race.wis_mod
+    else
+      wis
     end
   end
 
   def charisma
     if race
       cha + race.cha_mod
+    else
+      cha
     end
   end
 

@@ -1,0 +1,53 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  level: 1
+  prof_bonus: 1
+  trait_mapping_id: 1
+  rages: 1
+  rage_damage: 1
+  cantrips_known: 1
+  spells_known: 1
+  spell_slot_1: 1
+  spell_slot_2: 1
+  spell_slot_3: 1
+  spell_slot_4: 1
+  spell_slot_5: 1
+  spell_slot_6: 1
+  spell_slot_7: 1
+  spell_slot_8: 1
+  spell_slot_9: 1
+  martial_arts: MyString
+  ki_points: 1
+  unarmored_move: MyString
+  sneak_attack: MyString
+  spell_slots: 1
+  slot_level: MyString
+  invocations_known: 1
+
+two:
+  name: MyString
+  level: 1
+  prof_bonus: 1
+  trait_mapping_id: 1
+  rages: 1
+  rage_damage: 1
+  cantrips_known: 1
+  spells_known: 1
+  spell_slot_1: 1
+  spell_slot_2: 1
+  spell_slot_3: 1
+  spell_slot_4: 1
+  spell_slot_5: 1
+  spell_slot_6: 1
+  spell_slot_7: 1
+  spell_slot_8: 1
+  spell_slot_9: 1
+  martial_arts: MyString
+  ki_points: 1
+  unarmored_move: MyString
+  sneak_attack: MyString
+  spell_slots: 1
+  slot_level: MyString
+  invocations_known: 1

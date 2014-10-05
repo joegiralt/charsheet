@@ -68,7 +68,6 @@ Tongue.find_or_create_by!(name: 'Infernal')
 Tongue.find_or_create_by!(name: 'Promordial')
 Tongue.find_or_create_by!(name: 'Sylvian')
 Tongue.find_or_create_by!(name: 'Undercommon')
-
 Trait.find_or_create_by!(name: 'Darkvision')
 Trait.find_or_create_by!(name: 'Hellish Resistance')
 Trait.find_or_create_by!(name: 'Menacing')
@@ -79,7 +78,34 @@ Trait.find_or_create_by!(name: 'Natural Illusionist')
 Trait.find_or_create_by!(name: 'Speak with Small Beasts')
 Trait.find_or_create_by!(name: "Artificer's Lore")
 Trait.find_or_create_by!(name: 'Tinker')
+Trait.find_or_create_by!(name: 'Rage')
+Trait.find_or_create_by!(name: 'Unarmored Defense')
+Trait.find_or_create_by!(name: 'Reckless Attack')
+Trait.find_or_create_by!(name: 'Danger Sense')
+Trait.find_or_create_by!(name: 'Infernal Legacy')
+Trait.find_or_create_by!(name: 'Primal Path')
+Trait.find_or_create_by!(name: 'Brutal Critical (1d)')
+Trait.find_or_create_by!(name: 'Extra Attack')
+Trait.find_or_create_by!(name: 'Fast Movement')
+Trait.find_or_create_by!(name: 'Path Feature')
+Trait.find_or_create_by!(name: 'Feral Instinct')
+Trait.find_or_create_by!(name: 'Path Feature 2')
+Trait.find_or_create_by!(name: 'Ability Score Improvement 1')
+Trait.find_or_create_by!(name: 'Ability Score Improvement 2')
+Trait.find_or_create_by!(name: 'Ability Score Improvement 3')
+Trait.find_or_create_by!(name: 'Brutal Critical (2d)')
+Trait.find_or_create_by!(name: 'Path Feature 3')
+Trait.find_or_create_by!(name: 'Relentless Rage')
+Trait.find_or_create_by!(name: 'Persistant Rage')
+Trait.find_or_create_by!(name: 'Ability Score Improvement 4')
+Trait.find_or_create_by!(name: 'Brutal Critical (3d)')
+Trait.find_or_create_by!(name: 'Indomitable Might')
+Trait.find_or_create_by!(name: 'Primal Champion')
 Trait.find_or_create_by!(name: '')
+Trait.find_or_create_by!(name: '')
+
+
+
 
 
 TraitMapping.find_or_create_by!(traitable_id: Race.find_by(name: 'Tiefling').id, traitable_type: 'Race', trait_id: Trait.find_by(name: 'Darkvision').id)
@@ -104,6 +130,45 @@ Language.find_or_create_by!(languageable_id: Race.find_by(name: 'Half-Orc').id, 
 Language.find_or_create_by!(languageable_id: Race.find_by(name: 'Half-Orc').id, languageable_type: 'Race', tongue_id: Tongue.find_by(name: 'Orc').id)
 Language.find_or_create_by!(languageable_id: Race.find_by(name: 'Forest Gnome').id, languageable_type: 'Race', tongue_id: Tongue.find_by(name: 'Gnomish').id)
 Language.find_or_create_by!(languageable_id: Race.find_by(name: 'Forest Gnome').id, languageable_type: 'Race', tongue_id: Tongue.find_by(name: 'Common').id)
+
+Klass.find_or_create_by!(name: "Barbarian", level: 1, prof_bonus: 2, rages: 2, rage_damage: 2)
+Klass.find_or_create_by!(name: "Barbarian", level: 2, prof_bonus: 2, rages: 2, rage_damage: 2)
+Klass.find_or_create_by!(name: "Barbarian", level: 3, prof_bonus: 2, rages: 3, rage_damage: 2)
+Klass.find_or_create_by!(name: "Barbarian", level: 4, prof_bonus: 2, rages: 3, rage_damage: 2)
+Klass.find_or_create_by!(name: "Barbarian", level: 5, prof_bonus: 3, rages: 3, rage_damage: 2)
+Klass.find_or_create_by!(name: "Barbarian", level: 6, prof_bonus: 3, rages: 4, rage_damage: 2)
+Klass.find_or_create_by!(name: "Barbarian", level: 7, prof_bonus: 3, rages: 4, rage_damage: 2)
+Klass.find_or_create_by!(name: "Barbarian", level: 8, prof_bonus: 3, rages: 4, rage_damage: 2)
+Klass.find_or_create_by!(name: "Barbarian", level: 9, prof_bonus: 4, rages: 4, rage_damage: 3)
+Klass.find_or_create_by!(name: "Barbarian", level: 10, prof_bonus: 4, rages: 4, rage_damage: 3)
+
+
+
+
+TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 1).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Rage').id)
+TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 1).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Unarmored Defense').id)
+TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 2).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Reckless Attack').id)
+TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 2).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Danger Sense').id)
+TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 3).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Primal Path').id)
+TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 4).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Ability Score Improvement 1').id)
+TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 5).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Extra Attack').id)
+TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 5).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Fast Movement').id)
+TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 6).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Path Feature').id)
+TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 7).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Feral Instinct').id)
+TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 8).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Ability Score Improvement 2').id)
+TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 9).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Brutal Critical (1d)').id)
+TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 10).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Path Feature 2').id)
+
+
+
+
+
+
+
+
+
+
+
 
 
 

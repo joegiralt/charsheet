@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141004032939) do
+ActiveRecord::Schema.define(version: 20141004163832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,35 @@ ActiveRecord::Schema.define(version: 20141004032939) do
     t.integer  "race_id"
   end
 
+  create_table "klasses", force: true do |t|
+    t.string   "name"
+    t.integer  "level"
+    t.integer  "prof_bonus"
+    t.integer  "trait_mapping_id"
+    t.integer  "rages"
+    t.integer  "rage_damage"
+    t.integer  "cantrips_known"
+    t.integer  "spells_known"
+    t.integer  "spell_slot_1"
+    t.integer  "spell_slot_2"
+    t.integer  "spell_slot_3"
+    t.integer  "spell_slot_4"
+    t.integer  "spell_slot_5"
+    t.integer  "spell_slot_6"
+    t.integer  "spell_slot_7"
+    t.integer  "spell_slot_8"
+    t.integer  "spell_slot_9"
+    t.string   "martial_arts"
+    t.integer  "ki_points"
+    t.string   "unarmored_move"
+    t.string   "sneak_attack"
+    t.integer  "spell_slots"
+    t.string   "slot_level"
+    t.integer  "invocations_known"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "languages", force: true do |t|
     t.integer  "languageable_id"
     t.string   "languageable_type"
@@ -57,6 +86,22 @@ ActiveRecord::Schema.define(version: 20141004032939) do
     t.integer  "cha_mod"
     t.string   "size"
     t.string   "speed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "skill_mappings", force: true do |t|
+    t.integer  "skillable_id"
+    t.string   "skillable_type"
+    t.string   "skill_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "skill_mappings", ["skillable_id", "skillable_type"], name: "index_skill_mappings_on_skillable_id_and_skillable_type", using: :btree
+
+  create_table "skills", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

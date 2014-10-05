@@ -33,6 +33,7 @@ gem 'better_errors', group: :development
 
 # Use Binding of Caller to have a CMD Line in the browser window
 gem 'binding_of_caller', group: :development
+
 gem 'annotate', group: :development
 
 # Use ActiveModel has_secure_password

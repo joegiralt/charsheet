@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: traits
+# Table name: skills
 #
 #  id         :integer          not null, primary key
 #  name       :string(255)
@@ -8,6 +8,5 @@
 #  updated_at :datetime
 #
 
-class Trait < ActiveRecord::Base
-  has_many :trait_mappings
+class Skill < ActiveRecord::Base
 end
