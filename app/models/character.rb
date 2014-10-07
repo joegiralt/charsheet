@@ -67,11 +67,26 @@ class Character < ActiveRecord::Base
     save
   end
 
+
   def strength
     if race
       str + race.str_mod
     else
       str
+    end
+  end
+
+  def str_mod
+    if strength >= 10
+      (strength - 10) / 2
+    elsif strength >= 8
+      -1
+    elsif  strength >= 6
+      -2
+    elsif  strength >= 4
+      -3
+    elsif  strength >= 2
+      -4
     end
   end
 
@@ -83,11 +98,39 @@ class Character < ActiveRecord::Base
     end
   end
 
+  def dex_mod
+    if dexterity >= 10
+      (dexterity - 10) / 2
+    elsif dexterity >= 8
+      -1
+    elsif  dexterity >= 6
+      -2
+    elsif  dexterity >= 4
+      -3
+    elsif  dexterity >= 2
+      -4
+    end
+  end
+
   def constitution
     if race
       con + race.con_mod
     else
       con
+    end
+  end
+
+  def con_mod
+    if constitution >= 10
+      (constitution - 10) / 2
+    elsif constitution >= 8
+       -1
+    elsif  constitution >= 6
+       -2
+    elsif  constitution >= 4
+       -3
+    elsif  constitution >= 2
+       -4
     end
   end
 
@@ -99,6 +142,20 @@ class Character < ActiveRecord::Base
     end
   end
 
+  def int_mod
+    if intelligence >= 10
+      (intelligence - 10) / 2
+    elsif intelligence >= 8
+       -1
+    elsif  intelligence >= 6
+       -2
+    elsif  intelligence >= 4
+       -3
+    elsif  intelligence >= 2
+       -4
+    end
+  end
+
   def wisdom
     if race
       wis + race.wis_mod
@@ -107,11 +164,39 @@ class Character < ActiveRecord::Base
     end
   end
 
+  def wis_mod
+    if wisdom >= 10
+      (wisdom - 10) / 2
+    elsif wisdom >= 8
+      -1
+    elsif  wisdom >= 6
+      -2
+    elsif  wisdom >= 4
+      -3
+    elsif  wisdom >= 2
+      -4
+    end
+  end
+
   def charisma
     if race
       cha + race.cha_mod
     else
       cha
+    end
+  end
+
+  def cha_mod
+    if charisma >= 10
+      (charisma - 10) / 2
+    elsif charisma >= 8
+      -1
+    elsif  charisma >= 6
+      -2
+    elsif  charisma >= 4
+      -3
+    elsif  charisma >= 2
+      -4
     end
   end
 
