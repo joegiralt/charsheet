@@ -68,6 +68,8 @@ Tongue.find_or_create_by!(name: 'Infernal')
 Tongue.find_or_create_by!(name: 'Promordial')
 Tongue.find_or_create_by!(name: 'Sylvian')
 Tongue.find_or_create_by!(name: 'Undercommon')
+
+
 Trait.find_or_create_by!(name: 'Darkvision')
 Trait.find_or_create_by!(name: 'Hellish Resistance')
 Trait.find_or_create_by!(name: 'Menacing')
@@ -87,7 +89,7 @@ Trait.find_or_create_by!(name: 'Primal Path')
 Trait.find_or_create_by!(name: 'Brutal Critical (1d)')
 Trait.find_or_create_by!(name: 'Extra Attack')
 Trait.find_or_create_by!(name: 'Fast Movement')
-Trait.find_or_create_by!(name: 'Path Feature')
+Trait.find_or_create_by!(name: 'Path Feature 1')
 Trait.find_or_create_by!(name: 'Feral Instinct')
 Trait.find_or_create_by!(name: 'Path Feature 2')
 Trait.find_or_create_by!(name: 'Ability Score Improvement 1')
@@ -96,14 +98,16 @@ Trait.find_or_create_by!(name: 'Ability Score Improvement 3')
 Trait.find_or_create_by!(name: 'Brutal Critical (2d)')
 Trait.find_or_create_by!(name: 'Path Feature 3')
 Trait.find_or_create_by!(name: 'Relentless Rage')
-Trait.find_or_create_by!(name: 'Persistant Rage')
+Trait.find_or_create_by!(name: 'Persistent Rage')
 Trait.find_or_create_by!(name: 'Ability Score Improvement 4')
 Trait.find_or_create_by!(name: 'Brutal Critical (3d)')
 Trait.find_or_create_by!(name: 'Indomitable Might')
 Trait.find_or_create_by!(name: 'Primal Champion')
 Trait.find_or_create_by!(name: '')
 Trait.find_or_create_by!(name: '')
-
+['Relentless rage', 'Brutal Critical (2d)', 'Path Feature 2', 'Persistant Rage', 'Brutal Critical (3d)', 'Indomitable Might', 'Ability Score Improvement 5']. each do |trait|
+  Trait.find_or_create_by!(name: trait)
+end
 
 
 
@@ -141,6 +145,16 @@ Klass.find_or_create_by!(name: "Barbarian", level: 7, prof_bonus: 3, rages: 4, r
 Klass.find_or_create_by!(name: "Barbarian", level: 8, prof_bonus: 3, rages: 4, rage_damage: 2)
 Klass.find_or_create_by!(name: "Barbarian", level: 9, prof_bonus: 4, rages: 4, rage_damage: 3)
 Klass.find_or_create_by!(name: "Barbarian", level: 10, prof_bonus: 4, rages: 4, rage_damage: 3)
+Klass.find_or_create_by!(name: "Barbarian", level: 11, prof_bonus: 4, rages: 4, rage_damage: 3)
+Klass.find_or_create_by!(name: "Barbarian", level: 12, prof_bonus: 4, rages: 4, rage_damage: 3)
+Klass.find_or_create_by!(name: "Barbarian", level: 13, prof_bonus: 5, rages: 5, rage_damage: 3)
+Klass.find_or_create_by!(name: "Barbarian", level: 14, prof_bonus: 5, rages: 5, rage_damage: 3)
+Klass.find_or_create_by!(name: "Barbarian", level: 15, prof_bonus: 5, rages: 5, rage_damage: 3)
+Klass.find_or_create_by!(name: "Barbarian", level: 16, prof_bonus: 5, rages: 5, rage_damage: 4)
+Klass.find_or_create_by!(name: "Barbarian", level: 17, prof_bonus: 5, rages: 6, rage_damage: 4)
+Klass.find_or_create_by!(name: "Barbarian", level: 18, prof_bonus: 6, rages: 6, rage_damage: 4)
+Klass.find_or_create_by!(name: "Barbarian", level: 19, prof_bonus: 6, rages: 6, rage_damage: 4)
+Klass.find_or_create_by!(name: "Barbarian", level: 20, prof_bonus: 6, rages: 100, rage_damage: 4)
 
 
 
@@ -153,16 +167,44 @@ TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', l
 TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 4).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Ability Score Improvement 1').id)
 TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 5).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Extra Attack').id)
 TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 5).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Fast Movement').id)
-TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 6).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Path Feature').id)
+TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 6).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Path Feature 1').id)
 TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 7).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Feral Instinct').id)
 TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 8).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Ability Score Improvement 2').id)
 TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 9).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Brutal Critical (1d)').id)
 TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 10).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Path Feature 2').id)
+TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 11).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Relentless Rage').id)
+TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 12).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Ability Score Improvement 3').id)
+TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 13).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Brutal Critical (2d)').id)
+TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 14).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Path Feature 3').id)
+TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 15).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Persistent Rage').id)
+TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 16).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Ability Score Improvement 4').id)
+TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 17).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Brutal Critical (3d)').id)
+TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 18).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Indomitable Might').id)
+TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 19).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Ability Score Improvement 5').id)
+TraitMapping.find_or_create_by!(traitable_id: Klass.find_by(name: 'Barbarian', level: 20).id, traitable_type: 'Klass', trait_id: Trait.find_by(name: 'Primal Champion').id)
 
 
 
-
-
+Weapon.find_or_create_by!(name: '', kind: '', range: '', cost: '', damage: '', damage_type: '', weight: nil )
+Weapon.find_or_create_by!(name: 'Club',   kind: 'Simple', range: 'Melee', cost: 0.1, damage: '1d4',      damage_type: 'Bludgeoning', weight: 2 )
+Weapon.find_or_create_by!(name: 'Dagger', kind: 'Simple', range: 'Melee', cost: 2 , damage: '1d4',      damage_type: 'Piercing',  weight: 1 )
+Weapon.find_or_create_by!(name: 'Greatclub', kind: 'Simple', range: 'Melee', cost: 0.2, damage: '1d8', damage_type: 'Bludgeoning',  weight: 10 )
+Weapon.find_or_create_by!(name: 'Handaxe', kind: 'Simple', range: 'Melee', cost: 5, damage: '1d6',    damage_type: 'Slashing',  weight: 2 )
+Weapon.find_or_create_by!(name: 'Javelin', kind: 'Simple', range: 'Melee', cost: 0.5, damage: '1d6',   damage_type: 'Piercing',  weight: 2)
+Weapon.find_or_create_by!(name: 'Light Hammer', kind: 'Simple', range: 'Melee', cost: 2, damage: '1d4', damage_type: 'Bludgeoning',  weight:2 )
+Weapon.find_or_create_by!(name: 'Mace', kind: 'Simple', range: 'Melee', cost: 5, damage: '1d6', damage_type: 'Bludgeoning',  weight: 4)
+Weapon.find_or_create_by!(name: 'Quarterstaff', kind: 'Simple', range: 'Melee', cost: 0.2, damage: '1d6', damage_type: 'Bludgeoning',  weight: 4)
+Weapon.find_or_create_by!(name: 'Sickle', kind: 'Simple', range: 'Melee', cost: 1, damage: '1d4', damage_type: 'Piercing',  weight: 2)
+Weapon.find_or_create_by!(name: 'Spear', kind: 'Simple', range: 'Melee', cost: 1, damage: '1d6', damage_type: 'Piercing',  weight: 3)
+Weapon.find_or_create_by!(name: 'Unarmed Strike', kind: 'Simple', range: 'Melee', cost:0 , damage: '1', damage_type: 'Bludgeoning',  weight: 0 )
+Weapon.find_or_create_by!(name: 'Crossbow, Light', kind: 'Simple', range: 'Ranged', cost: 25 , damage: '', damage_type: '',  weight: 5)
+Weapon.find_or_create_by!(name: 'Dart', kind: 'Simple', range: 'Ranged', cost: 0.05, damage: '1d4', damage_type: 'Piercing',  weight: 0.25 )
+Weapon.find_or_create_by!(name: 'Shortbow', kind: 'Simple', range: 'Ranged', cost: 25 , damage: '1d6', damage_type: 'Piercing',  weight: 2 )
+Weapon.find_or_create_by!(name: 'Sling', kind: 'Simple', range: 'Ranged', cost: 0.1, damage: '1d4', damage_type: 'Bludgeoning',  weight: 0)
+Weapon.find_or_create_by!(name: 'Battleaxe', kind: 'Martial', range: 'Melee', cost: 10, damage: '1d8', damage_type: 'Slashing',  weight: 4 )
+Weapon.find_or_create_by!(name: 'Flail', kind: 'Martial', range: 'Melee', cost: 10, damage: '1d8', damage_type: 'Bludgeoning', weight: 2 )
+Weapon.find_or_create_by!(name: 'Glaive', kind: 'Martial', range: 'Melee', cost: 20, damage: '1d10', damage_type: 'Slashing', weight: 6 )
+Weapon.find_or_create_by!(name: 'Greataxe', kind: 'Martial', range: 'Melee', cost: 30, damage: '1d12', damage_type: 'Slashing', weight: 7 )
 
 
 

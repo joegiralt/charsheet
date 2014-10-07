@@ -25,8 +25,11 @@
 
 class Character < ActiveRecord::Base
 
+
   belongs_to :race, inverse_of: :characters
-  has_many :klasses
+  has_many :charclass
+  has_many :klasses, through: :charclass
+
 
   def self.roll_four_keep_three
     roll = []

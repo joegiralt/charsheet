@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  kind: MyString
+  cost: 
+  damage: MyString
+  damage_type: MyString
+
+two:
+  name: MyString
+  kind: MyString
+  cost: 
+  damage: MyString
+  damage_type: MyString
